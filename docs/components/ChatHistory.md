@@ -19,9 +19,8 @@ To display a list of chat messages and allow users to interact with the chat AI 
 ## Component Behavior
 
 - Display messages: The component displays a list of chat messages.
-- Insert messages: The component has a function to insert a new message at any position in the chat history.
+- Insert messages: The component has a function to insert a new message at any position in the chat history. If no index is specified, the new message is appended at the end.
 - Delete messages: The component has a function to delete any message from the chat history.
-- Append messages: The component has a function to append a new message to the list.
 - Send messages: The component uses the `chatRequest` function to send the message history, settings, and functions list to the chat AI assistant. When the response is received, it is appended to the chat history.
 
 ## Props
