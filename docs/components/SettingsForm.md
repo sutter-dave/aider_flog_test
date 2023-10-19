@@ -18,7 +18,6 @@ None.
 ## Component Behavior
 
 - Update settings: The component has functions to update each of the settings. When a setting value is updated and the field loses focus, the `onSettingsChange` function is called with an object containing the updated settings.
-- Pass settings: The component receives the current settings from the parent component or other parts of the application through the `settings` prop. It passes the updated settings back through the `onSettingsChange` function.
 
 ## Props
 
