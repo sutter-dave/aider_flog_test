@@ -6,23 +6,24 @@ To allow users to specify parameters for their request to the AI assistant.
 
 ## States
 
-- `settings`: An object of type `ChatSettings` that contains the settings for the chat.
+None.
 
 ## User Interactions
 
-- Update API Key: Users can update the API Key.
-- Select Model: Users can select a model from the provided options.
-- Update Temperature: Users can update the temperature.
-- Update Max Length: Users can update the max length.
+- Update API Key: Users can update the API Key. The updated settings are submitted when the field loses focus.
+- Select Model: Users can select a model from the provided options. The updated settings are submitted when the field loses focus.
+- Update Temperature: Users can update the temperature. The updated settings are submitted when the field loses focus.
+- Update Max Length: Users can update the max length. The updated settings are submitted when the field loses focus.
 
 ## Component Behavior
 
-- Update states: The component has functions to update each of the states. When a state value is updated, the `onSettingsChange` function is called with an object containing the current state values.
-- Pass state values: The component passes the current state values to the parent component or other parts of the application through the `onSettingsChange` function.
+- Update settings: The component has functions to update each of the settings. When a setting value is updated and the field loses focus, the `onSettingsChange` function is called with an object containing the updated settings.
+- Pass settings: The component receives the current settings from the parent component or other parts of the application through the `settings` prop. It passes the updated settings back through the `onSettingsChange` function.
 
 ## Props
 
-- `onSettingsChange`: A function that is called whenever the `settings` state changes. This function takes an object of type `ChatSettings` as a parameter.
+- `settings`: An object of type `ChatSettings` that contains the current settings for the chat. This is passed in from the parent component.
+- `onSettingsChange`: A function that is called whenever a setting value is updated and the field loses focus. This function takes an object of type `ChatSettings` as a parameter.
 
 ## Dependencies
 
