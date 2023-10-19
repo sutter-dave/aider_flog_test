@@ -7,14 +7,17 @@ To allow users to define the available functions for the AI assistant.
 ## States
 
 - `functions`: An array of `ChatFunction` objects that represent the available functions for the AI assistant.
+- `functionsText`: A string that holds the current text in the text area.
 
 ## User Interactions
 
 - Edit functions: Users can edit the functions list as free text in a single text area.
+- Click save button: Users can click a save button to submit the updated functions list.
 
 ## Component Behavior
 
-- Update functions: The component has a function to update the `functions` state when the text in the text area changes. When the text changes, the `onFunctionsChange` function is called with the updated list of functions.
+- Update functions text: The component has a function to update the `functionsText` state when the text in the text area changes.
+- Click save button: When the save button is clicked, the `onFunctionsChange` function is called with the current `functionsText` state.
 
 ## Props
 
