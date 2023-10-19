@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'development',
   entry: './src/index.tsx',
   output: {
     filename: 'main.js',
@@ -17,5 +18,8 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+  },
+  performance: {
+    hints: process.env.NODE_ENV === 'production' ? "warning" : false
   },
 };
