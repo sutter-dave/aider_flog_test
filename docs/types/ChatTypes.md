@@ -6,9 +6,11 @@ This document describes the types used in the chat application.
 
 This type represents a single chat message. It should include the following fields:
 
-- Content: The text of the message.
-- Sender: The sender of the message.
-- Timestamp: The time when the message was sent.
+- `id`: A unique identifier for the message.
+- `role`: The role of the message sender. The values for this field are `user`, `assistant`, `system`, `function`.
+- `content` (optional): The text of the message.
+- `function_call` (optional): An object with the required string fields `name` and `arguments`.
+- `name` (optional): The name of the sender.
 
 ## Type: ChatSettings
 
