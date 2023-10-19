@@ -12,14 +12,14 @@ To display and allow editing of a single chat message.
 ## User Interactions
 
 - Edit role: Users can select the role of the message sender from a dropdown menu. The options are `user`, `assistant`, `system`, `function`.
-- Edit content or function call: Users can choose to display and edit either the content or the function call of the message using a radio button. The initial state matches which field is populated, with the default being the content field if neither is populated.
-- Edit name: Users can choose to display and edit the name of the message sender using a checkbox. The default state is not showing.
+- Edit content or function call: Users can choose to display and edit either the content or the function call of the message using a radio button. The initial state matches which field is populated, with the default being the content field if neither is populated. The previous value is preserved when switching between content and function_call.
+- Edit name: Users can choose to display and edit the name of the message sender using a checkbox. The default state is not showing. The previous value is preserved when toggling the visibility of the name field.
 
 ## Component Behavior
 
 - Update state: When a field is updated and loses focus, the state is updated using the `updateMessage` callback.
-- Switch between content and function_call: When the user switches between displaying and editing the content and the function_call, the component updates the state accordingly.
-- Update name state: When the visibility of the name field changes, the name state is updated. If the name field is not visible, the name state is set to undefined.
+- Switch between content and function_call: When the user switches between displaying and editing the content and the function_call, the component updates the state accordingly. The previous value is preserved when switching between content and function_call.
+- Update name state: When the visibility of the name field changes, the name state is updated. If the name field is not visible, the name state is set to undefined. The previous value is preserved when toggling the visibility of the name field.
 
 ## Dependencies
 
