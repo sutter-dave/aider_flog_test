@@ -1,8 +1,4 @@
-# Settings Form Component
-
-## Component Name
-
-SettingsForm
+# Component: SettingsForm
 
 ## Purpose
 
@@ -15,17 +11,21 @@ To allow users to specify parameters for their request to the AI assistant.
 - Temperature: Numeric value, defaulting to 0.
 - Max Length: Numeric value, defaulting to undefined.
 
-## Public Functions
+## User Interactions
 
-Functions to update each of the states.
+- Update API Key: Users can update the API Key.
+- Select Model: Users can select a model from the provided options.
+- Update Temperature: Users can update the temperature.
+- Update Max Length: Users can update the max length.
 
-## Inputs
+## Component Behavior
+
+- Update states: The component has functions to update each of the states.
+- Pass state values: The component passes the current state values to the parent component or other parts of the application.
+
+## Props
 
 None.
-
-## Outputs
-
-The current state values.
 
 ## Dependencies
 
