@@ -1,4 +1,4 @@
-# Types: ChatTypes
+# Types: chatTypes
 
 This document describes the types used in the chat application.
 
