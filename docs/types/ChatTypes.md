@@ -21,7 +21,7 @@ This type represents the settings for the chat. It should include the following 
 - `apiKey`: The key used for communication with the AI assistant.
 - `model`: The model used by the AI assistant.
 - `temperature`: The temperature setting for the AI assistant.
-- `maxLength`: The maximum length of the response from the AI assistant.
+- `maxLength` (optional): The maximum length of the response from the AI assistant.
 
 ## Type: ChatFunction
 
