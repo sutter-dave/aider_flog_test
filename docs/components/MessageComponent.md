@@ -25,6 +25,12 @@ To display and allow editing of a single chat message.
 - Switch between content and function_call: When the user switches between displaying and editing the content and the function_call, the component updates the state accordingly. The previous value is preserved when switching between content and function_call.
 - Update name state: When the visibility of the name field changes, the name state is updated. If the name field is not visible, the name state is set to undefined. The previous value is preserved when toggling the visibility of the name field.
 
+## Layout
+
+The component is laid out as a form with one field per line. The fields are displayed in the following order: role, content/function call, name. Each field is accompanied by a label. The content and function call fields are mutually exclusive and are switched using a radio button. The name field can be shown or hidden using a checkbox.
+
+The active fields are displayed consecutively. Any "hidden" fields occupy a single line at the end, with a smaller size. For example, in the normal case of content showing and the name hidden, the last line of the form would contain the function call label and the associated radio button and the name label and its associated checkbox.
+
 ## Dependencies
 
 - [ChatTypes](../types/ChatTypes.md): The MessageComponent uses the `ChatMessage` type from `ChatTypes`.
