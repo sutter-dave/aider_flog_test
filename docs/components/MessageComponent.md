@@ -22,8 +22,8 @@ To display and allow editing of a single chat message.
 ## Component Behavior
 
 - Update state: When a field is updated and loses focus, the state is updated using the `updateMessage` callback.
-- Switch between content and function_call: When the user switches between displaying and editing the content and the function_call, the component updates the state accordingly. The previous value is preserved when switching between content and function_call.
-- Update name state: When the visibility of the name field changes, the name state is updated. If the name field is not visible, the name state is set to undefined. The previous value is preserved when toggling the visibility of the name field.
+- Switch between content and function_call: When the user switches between displaying and editing the content and the function_call, the component updates the message state accordingly. The previous value is preserved when switching between content and function_call.
+- Update name state: When the visibility of the name field changes, the component updates the message state accordingly. If the name field is not visible, the name state is set to undefined. The previous value is preserved when toggling the visibility of the name field.
 
 ## Layout
 
