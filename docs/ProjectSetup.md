@@ -20,6 +20,7 @@ To set up the project environment, install necessary dependencies, and create th
 7. Install and configure Jest and React Testing Library as the testing tools.
 8. Use React's built-in state management features like `useState`, `useContext`, and `useReducer`.
 9. Install Webpack Dev Server
+10. Install `ts-loader`, which allows webpack to transpile TypeScript files
 10. Additional Dependencies
    - Open AI API: `openai`
 
