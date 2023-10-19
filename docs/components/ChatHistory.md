@@ -1,8 +1,4 @@
-# Chat History Component
-
-## Component Name
-
-ChatHistory
+# Component: ChatHistory
 
 ## Purpose
 
@@ -27,4 +23,4 @@ None.
 
 ## Dependencies
 
-- Message component: The ChatHistory component depends on the Message component to display individual chat messages.
+- [MessageComponent](MessageComponent.md): The ChatHistory component depends on the MessageComponent to display individual chat messages.
