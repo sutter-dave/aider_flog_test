@@ -10,20 +10,21 @@ To display a list of chat messages and allow users to edit all messages to be se
 
 ## States
 
-A list of messages.
+- Messages: A list of chat messages.
 
-## Public Functions
+## User Interactions
 
-A function to append a new message to the list.
+- Edit messages: Users can edit all messages to be sent to the chat AI assistant.
 
-## Inputs
+## Component Behavior
 
-None.
+- Display messages: The component displays a list of chat messages.
+- Append messages: The component has a function to append a new message to the list.
 
-## Outputs
+## Props
 
 None.
 
 ## Dependencies
 
-The Message component.
+- Message component: The ChatHistory component depends on the Message component to display individual chat messages.
