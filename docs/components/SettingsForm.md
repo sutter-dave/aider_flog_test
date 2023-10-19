@@ -6,10 +6,7 @@ To allow users to specify parameters for their request to the AI assistant.
 
 ## States
 
-- `apiKey`: The key used for communication with the AI assistant.
-- `model`: The model used by the AI assistant.
-- `temperature`: The temperature setting for the AI assistant.
-- `maxLength` (optional): The maximum length of the response from the AI assistant.
+- `settings`: An object of type `ChatSettings` that contains the settings for the chat.
 
 ## User Interactions
 
@@ -25,11 +22,7 @@ To allow users to specify parameters for their request to the AI assistant.
 
 ## Props
 
-- `onSettingsChange`: A function that is called whenever the state values change. This function takes an object as a parameter. The object has the following structure:
-  - `apiKey`: The current value of the API Key state.
-  - `model`: The current value of the Model state.
-  - `temperature`: The current value of the Temperature state.
-  - `maxLength`: The current value of the Max Length state.
+- `onSettingsChange`: A function that is called whenever the `settings` state changes. This function takes an object of type `ChatSettings` as a parameter.
 
 ## Dependencies
 
