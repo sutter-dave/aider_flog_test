@@ -8,7 +8,6 @@ To display a list of chat messages and allow users to interact with the chat AI 
 
 - Messages: A list of `ChatMessage` objects.
 - Settings: An object of type `ChatSettings` that contains the settings for the chat.
-- Functions: An array of `ChatFunction` objects that represent the available functions for the AI assistant.
 
 ## User Interactions
 
@@ -23,7 +22,7 @@ To display a list of chat messages and allow users to interact with the chat AI 
 
 ## Props
 
-None.
+- `functions`: An array of `ChatFunction` objects that represent the available functions for the AI assistant. This is passed in from the parent component.
 
 ## Dependencies
 

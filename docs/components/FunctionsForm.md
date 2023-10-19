@@ -6,7 +6,6 @@ To allow users to define the available functions for the AI assistant.
 
 ## States
 
-- `functions`: An array of `ChatFunction` objects that represent the available functions for the AI assistant.
 - `functionsText`: A string that holds the current text in the text area.
 
 ## User Interactions
@@ -21,6 +20,7 @@ To allow users to define the available functions for the AI assistant.
 
 ## Props
 
+- `functions`: An array of `ChatFunction` objects that represent the available functions for the AI assistant. This is passed in from the parent component.
 - `onFunctionsChange`: A function that is called whenever the `functions` state changes. This function takes an array of `ChatFunction` objects as a parameter.
 
 ## Dependencies
