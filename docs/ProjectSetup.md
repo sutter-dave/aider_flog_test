@@ -1,5 +1,9 @@
 # Project Setup
 
+## Project Creation
+
+To set up the project environment, install necessary dependencies, and create the basic directory structure, follow these steps:
+
 1. Initialize a new project with npm.
 2. Install React and ReactDOM.
 3. Install TypeScript and set up a `tsconfig.json` file.
@@ -16,10 +20,6 @@
 8. Use React's built-in state management features like `useState`, `useContext`, and `useReducer`.
 9. Additional Dependencies
    - Open AI API: `openai`
-
-## Project Creation
-
-Follow the steps listed above to set up the project environment, install necessary dependencies, and create the basic directory structure.
 
 ## Design Documents
 
