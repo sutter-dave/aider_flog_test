@@ -12,8 +12,12 @@ To display and allow editing of a single chat message.
 ## User Interactions
 
 - Edit role: Users can select the role of the message sender from a dropdown menu. The options are `user`, `assistant`, `system`, `function`.
-- Edit content or function call: Users can choose to display and edit either the content or the function call of the message using a radio button. The initial state matches which field is populated, with the default being the content field if neither is populated. The previous value is preserved when switching between content and function_call.
-- Edit name: Users can choose to display and edit the name of the message sender using a checkbox. The default state is not showing. The previous value is preserved when toggling the visibility of the name field.
+- Edit content: Users can edit the content of the message when the content field is displayed.
+- Edit function call name: Users can edit the name of the function call when the function call field is displayed.
+- Edit function call arguments: Users can edit the arguments of the function call when the function call field is displayed.
+- Edit name: Users can edit the name of the message sender when the name field is displayed.
+- Select between content and function call: Users can choose to display and edit either the content or the function call of the message using a radio button. The initial state matches which field is populated, with the default being the content field if neither is populated. The previous value is preserved when switching between content and function_call.
+- Show/Hide name field: Users can choose to show or hide the name of the message sender using a checkbox. The default state is not showing. The previous value is preserved when toggling the visibility of the name field.
 
 ## Component Behavior
 
