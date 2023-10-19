@@ -6,10 +6,10 @@ To allow users to specify parameters for their request to the AI assistant.
 
 ## States
 
-- API Key: The key used for communication.
-- Model: Choice of model with provided options.
-- Temperature: Numeric value, defaulting to 0.
-- Max Length: Numeric value, defaulting to undefined.
+- `apiKey`: The key used for communication with the AI assistant.
+- `model`: The model used by the AI assistant.
+- `temperature`: The temperature setting for the AI assistant.
+- `maxLength` (optional): The maximum length of the response from the AI assistant.
 
 ## User Interactions
 

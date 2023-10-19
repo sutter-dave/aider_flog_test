@@ -6,7 +6,7 @@ To display a list of chat messages and allow users to edit all messages to be se
 
 ## States
 
-- Messages: A list of chat messages.
+- Messages: A list of `ChatMessage` objects.
 
 ## User Interactions
 
