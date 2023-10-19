@@ -23,8 +23,8 @@ To display a list of chat messages and allow users to interact with the chat AI 
 ## Component Behavior
 
 - Display messages: The component displays a list of chat messages.
-- Display settings: The component displays the current settings.
-- Display functions list: The component displays the list of available functions.
+- Display settings: The component displays the current settings if `showSettings` is true.
+- Display functions list: The component displays the list of available functions if `showFunctions` is true.
 - Insert messages: The component has a function to insert a new message at any position in the chat history. If no index is specified, the new message is appended at the end.
 - Delete messages: The component has a function to delete any message from the chat history.
 - Send messages: The component uses the `chatRequest` function to send the message history, settings, and functions list to the chat AI assistant. When the response is received, it is appended to the chat history.
