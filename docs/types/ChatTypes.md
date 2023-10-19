@@ -18,10 +18,10 @@ This type represents a single chat message. It should include the following fiel
 
 This type represents the settings for the chat. It should include the following fields:
 
-- API Key: The key used for communication with the AI assistant.
-- Model: The model used by the AI assistant.
-- Temperature: The temperature setting for the AI assistant.
-- Max Length: The maximum length of the response from the AI assistant.
+- `apiKey`: The key used for communication with the AI assistant.
+- `model`: The model used by the AI assistant.
+- `temperature`: The temperature setting for the AI assistant.
+- `maxLength`: The maximum length of the response from the AI assistant.
 
 ## Type: ChatFunction
 
