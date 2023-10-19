@@ -9,7 +9,9 @@ This type represents a single chat message. It should include the following fiel
 - `id`: A unique identifier for the message.
 - `role`: The role of the message sender. The values for this field are `user`, `assistant`, `system`, `function`.
 - `content` (optional): The text of the message.
-- `function_call` (optional): An object with the required string fields `name` and `arguments`.
+- `function_call` (optional): An object with the following fields:
+  - `name`: The name of the function to be called.
+  - `arguments`: The arguments to be passed to the function.
 - `name` (optional): The name of the sender.
 
 ## Type: ChatSettings
