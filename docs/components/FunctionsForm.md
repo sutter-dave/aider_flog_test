@@ -10,13 +10,11 @@ To allow users to define the available functions for the AI assistant.
 
 ## User Interactions
 
-- Add function: Users can add a new function to the list.
-- Edit function: Users can edit an existing function in the list.
-- Delete function: Users can delete a function from the list.
+- Edit functions: Users can edit the functions list as free text in a single text area.
 
 ## Component Behavior
 
-- Update functions: The component has functions to add, edit, and delete functions in the `functions` state. When a function is added, edited, or deleted, the `onFunctionsChange` function is called with the updated list of functions.
+- Update functions: The component has a function to update the `functions` state when the text in the text area changes. When the text changes, the `onFunctionsChange` function is called with the updated list of functions.
 
 ## Props
 
