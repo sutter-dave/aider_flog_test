@@ -18,9 +18,10 @@ export type ChatSettings = {
 
 export type ChatFunction = {
   name: string;
+  description?: string;
   parameters: {
     type: string;
-    properties: Record<string, { type: string; description: string }>;
+    properties: Record<string, unknown>;
     required: string[];
   };
 };
