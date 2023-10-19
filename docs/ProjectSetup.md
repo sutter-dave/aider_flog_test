@@ -17,3 +17,11 @@
 9. Additional Dependencies
    - Open AI API: `openai`
 
+## Project Creation
+
+Follow the steps listed above to set up the project environment, install necessary dependencies, and create the basic directory structure.
+
+## Design Documents
+
+For each code file, there is a corresponding high-level design document. These documents are synchronized with their corresponding code files throughout the application's lifecycle. For more details, refer to the [Design Documents](../ext/DesignDocuments.md) guide.
+
