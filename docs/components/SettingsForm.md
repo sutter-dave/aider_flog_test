@@ -20,12 +20,16 @@ To allow users to specify parameters for their request to the AI assistant.
 
 ## Component Behavior
 
-- Update states: The component has functions to update each of the states.
-- Pass state values: The component passes the current state values to the parent component or other parts of the application.
+- Update states: The component has functions to update each of the states. When a state value is updated, the `onSettingsChange` function is called with an object containing the current state values.
+- Pass state values: The component passes the current state values to the parent component or other parts of the application through the `onSettingsChange` function.
 
 ## Props
 
-None.
+- `onSettingsChange`: A function that is called whenever the state values change. This function takes an object as a parameter. The object has the following structure:
+  - `apiKey`: The current value of the API Key state.
+  - `model`: The current value of the Model state.
+  - `temperature`: The current value of the Temperature state.
+  - `maxLength`: The current value of the Max Length state.
 
 ## Dependencies
 
