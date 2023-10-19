@@ -20,7 +20,7 @@ This document details the project's setup, providing sufficient information to b
 
 Each high-level design document should typically specify:
  
-- Component name
+- Title (including the component name for UI elements)
 - Purpose
 
 Depending on the file type, we'll also include: 
@@ -30,7 +30,7 @@ Depending on the file type, we'll also include:
 - For `class`: List states and public functions.
 - For `UI elements`: Define inputs, behaviors, and interactions.
 
-Lastly, dependencies should be listed at the file level.
+States and dependencies should be listed as bullet points. Dependencies should also include a link to their respective documents, if applicable.
 
 ## Best Practices
 
