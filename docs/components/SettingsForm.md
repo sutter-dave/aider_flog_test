@@ -26,4 +26,4 @@ To allow users to specify parameters for their request to the AI assistant.
 
 ## Dependencies
 
-None.
+- [ChatTypes](../types/ChatTypes.md): The SettingsForm component uses the `ChatSettings` type from `ChatTypes`.

@@ -24,3 +24,4 @@ None.
 ## Dependencies
 
 - [MessageComponent](MessageComponent.md): The ChatHistory component depends on the MessageComponent to display individual chat messages.
+- [ChatTypes](../types/ChatTypes.md): The ChatHistory component uses the `ChatMessage` type from `ChatTypes`.
