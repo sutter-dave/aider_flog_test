@@ -1,5 +1,5 @@
 {
-  "name": "aider_flog_test",
+  "name": "PromptSandbox",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "openai": "^4.12.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
