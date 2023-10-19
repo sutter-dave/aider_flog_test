@@ -19,14 +19,18 @@ This document details the project's setup, providing sufficient information to b
 ### Design Document for Code Files
 
 Each high-level design document should typically specify:
+ 
+- Component name
+- Purpose
 
-- Title: Always include the name of the file, along with a modifier telling what it is, like "Component: ChatHistory".
-- Purpose: A brief description of what the code file or component is meant to do.
-- Dependencies: A list of other code files or components that this file or component depends on. This should be formatted as a bullet list.
+Depending on the file type, we'll also include: 
 
-Additional sections can be added as needed based on the specific code file or component. For example, for a UI component, you might want to include sections like "States", "Public Functions", "Inputs", and "Outputs". For a utility function, you might want to include sections like "Inputs", "Outputs", and "Algorithm".
+- For `types`: Specify the fields.
+- For `functions`: Specify inputs, outputs (including side effects), and high-level workflow.
+- For `class`: List states and public functions.
+- For `UI elements`: Define inputs, behaviors, and interactions.
 
-Dependencies should also include a link to their respective documents, if applicable.
+Lastly, dependencies should be listed at the file level.
 
 ## Best Practices
 
