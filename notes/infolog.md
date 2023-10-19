@@ -58,3 +58,8 @@ the react elements
 - (The assistant wanted `Outputs` but I nixed it. I should review this. For now, the outputs were reflected in the props and behaviors.)
 
 TODO: refine the document structure!
+
+aider notes:
+
+- it seems so eager to make the file edits and then commit them. I would prefer I could look at the edits, either
+in the chat session (somehow) or by looking at pre-commit output, which I could choose to commit.
