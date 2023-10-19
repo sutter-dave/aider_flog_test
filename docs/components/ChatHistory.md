@@ -8,6 +8,9 @@ To display a list of chat messages and allow users to interact with the chat AI 
 
 - Messages: A list of `ChatMessage` objects.
 - Settings: An object of type `ChatSettings` that contains the settings for the chat.
+- Functions: A list of `ChatFunction` objects that represent the available functions for the AI assistant.
+- ShowSettings: A boolean that indicates whether the settings are shown or hidden.
+- ShowFunctions: A boolean that indicates whether the functions list is shown or hidden.
 
 ## User Interactions
 
