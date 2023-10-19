@@ -15,6 +15,11 @@ To display and allow editing of a single chat message.
 - Edit content or function call: Users can choose to display and edit either the content or the function call of the message using a radio button. The initial state matches which field is populated, with the default being the content field if neither is populated.
 - Edit name: Users can choose to display and edit the name of the message sender using a checkbox. The default state is not showing.
 
+## Component Behavior
+
+- Update state: When a field is updated and loses focus, the state is updated using the `updateMessage` callback.
+- Switch between content and function_call: When the user switches between displaying and editing the content and the function_call, the component updates the state accordingly.
+
 ## Dependencies
 
 - [ChatTypes](../types/ChatTypes.md): The MessageComponent uses the `ChatMessage` type from `ChatTypes`.
