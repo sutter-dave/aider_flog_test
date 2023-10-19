@@ -21,6 +21,7 @@ To set up the project environment, install necessary dependencies, and create th
 8. Use React's built-in state management features like `useState`, `useContext`, and `useReducer`.
 9. Additional Dependencies
    - Open AI API: `openai`
+   - Webpack Dev Server: `webpack-dev-server`
 
 ## Design Documents
 
