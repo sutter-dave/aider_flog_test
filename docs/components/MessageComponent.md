@@ -9,6 +9,13 @@ To display and allow editing of a single chat message.
 - `message`: An object of type `ChatMessage` that represents the message to be displayed and edited.
 - `updateMessage`: A function that updates the message. This function is passed in from the parent component.
 
+## States
+
+- `contentValue`: A string representing the current value of the content. This state retains its value even when the content field is not displayed.
+- `functionCallName`: A string representing the current value of the function call name. This state retains its value even when the function call field is not displayed.
+- `functionCallArgString`: A string representing the current value of the function call argument string. This state retains its value even when the function call field is not displayed.
+- `nameValue`: A string representing the current value of the name. This state retains its value even when the name field is not displayed.
+
 ## User Interactions
 
 - Edit role: Users can select the role of the message sender from a dropdown menu. The options are `user`, `assistant`, `system`, `function`.
