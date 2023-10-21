@@ -17,7 +17,7 @@ To set up the project environment, install necessary dependencies, and create th
         - `utils`: This is where all the utility functions will reside.
     - `docs`: This is where all the design documents will reside. The structure of this folder mirrors the structure of the `src` folder.
 6. Install and configure ESLint as the linter and Prettier as the formatter.
-7. Install and configure Jest and React Testing Library as the testing tools.
+7. Install and configure Jest (for typescript) and React Testing Library as the testing tools
 8. Use React's built-in state management features like `useState`, `useContext`, and `useReducer`.
 9. Install Webpack Dev Server
 10. Install `ts-loader`, which allows webpack to transpile TypeScript files
