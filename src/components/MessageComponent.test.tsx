@@ -27,7 +27,7 @@ test('renders message component', () => {
   const functionCallArgStringElement = getByLabelText(/Function Call Arguments:/i);
   expect(functionCallArgStringElement).toBeInTheDocument();
 
-  const nameElement = getByLabelText(/Name:/i);
+  const nameElement = getByLabelText(/^Name:$/i);
   expect(nameElement).toBeInTheDocument();
 });
 
