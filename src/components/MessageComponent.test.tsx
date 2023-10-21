@@ -85,10 +85,10 @@ test('updates message function call', () => {
   fireEvent.blur(functionCallNameElement);
 
   const functionCallArgStringElement = getByLabelText(/Function Call Arguments:/i) as HTMLInputElement;
-  fireEvent.change(functionCallArgStringElement, { target: { value: JSON.stringify({ message: 'Hello, universe!' }) } });
+  fireEvent.change(functionCallArgStringElement, { target: { value: JSON.stringify({ greeting: 'Hello, universe!' }) } });
   fireEvent.blur(functionCallArgStringElement);
 
-  expect(updateMessage).toHaveBeenCalledWith({ ...message, function_call: { name: 'say', arguments: { message: 'Hello, universe!' } } });
+  expect(updateMessage).toHaveBeenCalledWith({ ...message, function_call: { name: 'say', arguments: { greeting: 'Hello, universe!' } } });
 });
 
 test('updates message name', () => {
