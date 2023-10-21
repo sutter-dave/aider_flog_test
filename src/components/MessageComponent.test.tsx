@@ -102,7 +102,7 @@ test('updates message name', () => {
 
   const { getByLabelText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
 
-  const nameElement = getByLabelText(/Name:/i) as HTMLInputElement;
+  const nameElement = getByLabelText(/^Name:$/i) as HTMLInputElement;
   fireEvent.change(nameElement, { target: { value: 'Jane Doe' } });
   fireEvent.blur(nameElement);
 
