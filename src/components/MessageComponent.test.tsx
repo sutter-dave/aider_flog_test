@@ -88,7 +88,8 @@ test('updates message function call', () => {
   fireEvent.change(functionCallArgStringElement, { target: { value: JSON.stringify({ greeting: 'Hello, universe!' }) } });
   fireEvent.blur(functionCallArgStringElement);
 
-  expect(updateMessage).toHaveBeenCalledWith({ ...message, function_call: { name: 'say', arguments: { greeting: 'Hello, universe!' } } });
+  expect(updateMessage).toHaveBeenCalledWith({ ...message, function_call: { ...message.function_call, name: 'say' } });
+  expect(updateMessage).toHaveBeenCalledWith({ ...message, function_call: { ...message.function_call, arguments: { greeting: 'Hello, universe!' } } });
 });
 
 test('updates message name', () => {
