@@ -6,7 +6,7 @@
 .form-group {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 10px;
+  margin-bottom: 2.5px; /* Updated margin-bottom value */
 }
 
 .label-right {
@@ -41,10 +41,9 @@ input[type="text"] {
   background: none;
   border: none;
   color: blue;
-  font-size: 14px;
+  font-size: 10px; /* Updated font size */
   cursor: pointer;
   text-decoration: none; /* Remove underline */
-  font-weight: bold; /* Add hover effect */
 }
 
 .link-button:hover {

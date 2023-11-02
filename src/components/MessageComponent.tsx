@@ -10,7 +10,7 @@ interface MessageComponentProps {
 const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMessage }) => {
   const [contentValue, setContentValue] = useState(message.content || '');
   const [functionCallName, setFunctionCallName] = useState(message.function_call?.name || '');
-  const [functionCallArgString, setFunctionCallArgString] = useState(JSON.stringify(message.function_call?.arguments) || '');
+  const [functionCallArgString, setFunctionCallArgString] = useState(JSON.stringify(message.function_call?.arguments) || '{}');
   const [nameValue, setNameValue] = useState(message.name || '');
   const [showContent, setShowContent] = useState(true);
   const [showName, setShowName] = useState(false);
@@ -34,6 +34,18 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
     } else {
       // Hiding the name field, update the message state with undefined for name
       updateMessage({ ...message, name: undefined });
+    }
+  };
+
+  const handleFunctionCallArgStringChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+    setFunctionCallArgString(value);
+    try {
+      const parsedArgs = JSON.parse(value);
+      updateMessage({ ...message, function_call: { ...message.function_call, arguments: parsedArgs } });
+    } catch (error) {
+      // Handle parsing error here (e.g. show an error message)
+      console.error('Error parsing function call arguments:', error);
     }
   };
 
@@ -78,7 +90,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
             Function Call Arguments:
           </div>
           <div className="input-container">
-            <textarea rows={6} value={functionCallArgString} onChange={(e) => setFunctionCallArgString(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, arguments: JSON.parse(functionCallArgString) } })} />
+            <textarea rows={6} value={functionCallArgString} onChange={handleFunctionCallArgStringChange} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, arguments: JSON.parse(functionCallArgString) } })} />
           </div>
         </div>
       )}
