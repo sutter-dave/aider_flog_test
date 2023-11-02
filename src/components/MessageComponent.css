@@ -5,7 +5,7 @@
 
 .form-group {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Updated to align items at the top */
   margin-bottom: 10px;
 }
 
@@ -13,11 +13,12 @@
   margin-right: 10px;
   text-align: right;
   flex: 0 0 150px;
+  padding-top: 5px; /* Added to align label at the top right */
 }
 
 textarea,
 input[type="text"],
 select {
   flex: 1;
-  margin-left: 10px; /* Add this line to create space between label and input */
+  margin-left: 10px;
 }
