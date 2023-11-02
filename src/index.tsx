@@ -17,4 +17,4 @@ const App: React.FC = () => {
   return <MessageComponent message={message} updateMessage={updateMessage} />;
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
