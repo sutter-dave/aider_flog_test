@@ -23,8 +23,8 @@ To display and allow editing of a single chat message.
 - Edit function call name: Users can edit the name of the function call when the function call field is displayed.
 - Edit function call arguments: Users can edit the arguments of the function call when the function call field is displayed.
 - Edit name: Users can edit the name of the message sender when the name field is displayed.
-- Select between content and function call: Users can choose to display and edit either the content or the function call of the message using a radio button. The initial state matches which field is populated, with the default being the content field if neither is populated. The previous value is preserved when switching between content and function_call.
-- Show/Hide name field: Users can choose to show or hide the name of the message sender using a checkbox. The default state is not showing. The previous value is preserved when toggling the visibility of the name field.
+- Select between content and function call: Users can choose to display and edit either the content or the function call of the message. The initial state matches which field is populated, with the default being the content field if neither is populated. The previous value is preserved when switching between content and function_call.
+- Show/Hide name field: Users can choose to show or hide the name of the message sender. The default state is not showing. The previous value is preserved when toggling the visibility of the name field.
 
 ## Component Behavior
 
@@ -34,9 +34,18 @@ To display and allow editing of a single chat message.
 
 ## Layout
 
-The component is laid out as a form with one field per line. The fields are displayed in the following order: role, content/function call, name. Each field is accompanied by a label. The content and function call fields are mutually exclusive and are switched using a radio button. The name field can be shown or hidden using a checkbox.
+The component is laid out as a form with one field per line. The fields are displayed in the following order: role, content/function call, name. Each field is accompanied by a label. The content and function call fields are mutually exclusive and are switched button/link. The name field can be shown or hidden using a button.
 
-The active fields are displayed consecutively. Any "hidden" fields occupy a single line at the end, with a smaller size. For example, in the normal case of content showing and the name hidden, the last line of the form would contain the function call label and the associated radio button and the name label and its associated checkbox.
+The active fields are displayed consecutively. A single line after the fields contains the buttons to switch between content and function call and to
+hide or show the name field.
+
+Use the following labels for the button/links:
+
+- Content showing: "Function Call Input"
+- Function call showing: "Normal Message Input"
+
+- Name showing: "Omit Name Field"
+- Name hidden: "Include Name Field"
 
 ## Dependencies
 
