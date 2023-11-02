@@ -51,21 +51,28 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
       {!showContent && (
         <div className="form-group">
           <div className="label-right">
-            Function Call Name:
+            Function Call:
           </div>
           <div className="input-container">
-            <input type="text" value={functionCallName} onChange={(e) => setFunctionCallName(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, name: functionCallName } })} />
+            <div className="form-group">
+              <div className="label-right">
+                Name:
+              </div>
+              <div className="input-container">
+                <input type="text" value={functionCallName} onChange={(e) => setFunctionCallName(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, name: functionCallName } })} />
+              </div>
+            </div>
+            <div className="form-group">
+              <div className="label-right">
+                Arguments:
+              </div>
+              <div className="input-container">
+                <textarea value={functionCallArgString} onChange={(e) => setFunctionCallArgString(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, arguments: JSON.parse(functionCallArgString) } })} />
+              </div>
+            </div>
           </div>
         </div>
       )}
-      <div className="form-group">
-        <div className="label-right">
-          Function Call Arguments:
-        </div>
-        <div className="input-container">
-          <textarea value={functionCallArgString} onChange={(e) => setFunctionCallArgString(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, arguments: JSON.parse(functionCallArgString) } })} />
-        </div>
-      </div>
       {showName && (
         <div className="form-group">
           <div className="label-right">
@@ -77,9 +84,6 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
         </div>
       )}
       <div className="form-group">
-        <div className="label-right">
-          Show/Hide:
-        </div>
         <div className="input-container">
           <button onClick={toggleContent}>{showContent ? 'Function Call Input' : 'Normal Message Input'}</button>
           <button onClick={toggleName}>{showName ? 'Omit Name Field' : 'Include Name Field'}</button>
