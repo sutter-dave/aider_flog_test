@@ -16,7 +16,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
   return (
     <div className="message-component">
       <div className="form-group">
-        <label>
+        <label className="label-right">
           Role:
           <select value={message.role} onChange={(e) => updateMessage({ ...message, role: e.target.value as any })}>
             <option value="user">User</option>
@@ -27,25 +27,25 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
         </label>
       </div>
       <div className="form-group">
-        <label>
+        <label className="label-right">
           Content:
           <textarea value={contentValue} onChange={(e) => setContentValue(e.target.value)} onBlur={() => updateMessage({ ...message, content: contentValue })} />
         </label>
       </div>
       <div className="form-group">
-        <label>
+        <label className="label-right">
           Function Call Name:
           <input type="text" value={functionCallName} onChange={(e) => setFunctionCallName(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, name: functionCallName } })} />
         </label>
       </div>
       <div className="form-group">
-        <label>
+        <label className="label-right">
           Function Call Arguments:
           <textarea value={functionCallArgString} onChange={(e) => setFunctionCallArgString(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, arguments: JSON.parse(functionCallArgString) } })} />
         </label>
       </div>
       <div className="form-group">
-        <label>
+        <label className="label-right">
           Name:
           <input type="text" value={nameValue} onChange={(e) => setNameValue(e.target.value)} onBlur={() => updateMessage({ ...message, name: nameValue })} />
         </label>
