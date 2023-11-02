@@ -13,22 +13,22 @@ test('renders message component', () => {
 
   const updateMessage = jest.fn();
 
-  const { getByLabelText, getByText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+  const { getByTestId, getByText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
 
-  const roleElement = getByLabelText(/Role:/i);
+  const roleElement = getByTestId('role-select');
   expect(roleElement).toBeInTheDocument();
 
-  const contentElement = getByLabelText(/Content:/i);
+  const contentElement = getByTestId('content-input');
   expect(contentElement).toBeInTheDocument();
 
-  const functionCallNameElement = getByLabelText(/Function Call Name:/i);
-  expect(functionCallNameElement).toBeInTheDocument();
+  const functionCallNameElement = getByTestId('function-call-name-input');
+  expect(functionCallNameElement).not.toBeInTheDocument();
 
-  const functionCallArgStringElement = getByLabelText(/Function Call Arguments:/i);
-  expect(functionCallArgStringElement).toBeInTheDocument();
+  const functionCallArgStringElement = getByTestId('function-call-arguments-input');
+  expect(functionCallArgStringElement).not.toBeInTheDocument();
 
-  const nameElement = getByLabelText(/^Name:$/i);
-  expect(nameElement).toBeInTheDocument();
+  const nameElement = getByTestId('name-input');
+  expect(nameElement).not.toBeInTheDocument();
 
   const includeNameFieldButton = getByText(/Include Name Field/i);
   expect(includeNameFieldButton).toBeInTheDocument();
@@ -46,9 +46,9 @@ test('updates message role', () => {
 
   const updateMessage = jest.fn();
 
-  const { getByLabelText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+  const { getByTestId } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
 
-  const roleElement = getByLabelText(/Role:/i) as HTMLSelectElement;
+  const roleElement = getByTestId('role-select') as HTMLSelectElement;
   fireEvent.change(roleElement, { target: { value: 'assistant' } });
 
   expect(updateMessage).toHaveBeenCalledWith({ ...message, role: 'assistant' });
@@ -63,9 +63,9 @@ test('updates message content', () => {
 
   const updateMessage = jest.fn();
 
-  const { getByLabelText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+  const { getByTestId } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
 
-  const contentElement = getByLabelText(/Content:/i) as HTMLInputElement;
+  const contentElement = getByTestId('content-input') as HTMLInputElement;
   fireEvent.change(contentElement, { target: { value: 'Hello, universe!' } });
   fireEvent.blur(contentElement);
 
@@ -84,13 +84,13 @@ test('updates message function call', () => {
 
   const updateMessage = jest.fn();
 
-  const { getByLabelText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+  const { getByTestId } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
 
-  const functionCallNameElement = getByLabelText(/Function Call Name:/i) as HTMLInputElement;
+  const functionCallNameElement = getByTestId('function-call-name-input') as HTMLInputElement;
   fireEvent.change(functionCallNameElement, { target: { value: 'say' } });
   fireEvent.blur(functionCallNameElement);
 
-  const functionCallArgStringElement = getByLabelText(/Function Call Arguments:/i) as HTMLInputElement;
+  const functionCallArgStringElement = getByTestId('function-call-arguments-input') as HTMLInputElement;
   fireEvent.change(functionCallArgStringElement, { target: { value: JSON.stringify({ greeting: 'Hello, universe!' }) } });
   fireEvent.blur(functionCallArgStringElement);
 
@@ -107,9 +107,9 @@ test('updates message name', () => {
 
   const updateMessage = jest.fn();
 
-  const { getByLabelText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+  const { getByTestId } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
 
-  const nameElement = getByLabelText(/^Name:$/i) as HTMLInputElement;
+  const nameElement = getByTestId('name-input') as HTMLInputElement;
   fireEvent.change(nameElement, { target: { value: 'Jane Doe' } });
   fireEvent.blur(nameElement);
 
@@ -125,12 +125,12 @@ test('shows and hides name field', () => {
 
   const updateMessage = jest.fn();
 
-  const { getByText, getByLabelText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+  const { getByText, getByTestId } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
 
   const includeNameFieldButton = getByText(/Include Name Field/i);
   fireEvent.click(includeNameFieldButton);
 
-  const nameElement = getByLabelText(/^Name:$/i);
+  const nameElement = getByTestId('name-input');
   expect(nameElement).toBeInTheDocument();
 
   const omitNameFieldButton = getByText(/Omit Name Field/i);
@@ -148,12 +148,12 @@ test('switches between content and function call', () => {
 
   const updateMessage = jest.fn();
 
-  const { getByText, getByLabelText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+  const { getByText, getByTestId } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
 
   const functionCallInputButton = getByText(/Function Call Input/i);
   fireEvent.click(functionCallInputButton);
 
-  const functionCallNameElement = getByLabelText(/Function Call Name:/i);
+  const functionCallNameElement = getByTestId('function-call-name-input');
   expect(functionCallNameElement).toBeInTheDocument();
 
   const normalMessageInputButton = getByText(/Normal Message Input/i);

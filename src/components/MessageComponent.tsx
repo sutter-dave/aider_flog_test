@@ -56,7 +56,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
           Role:
         </div>
         <div className="input-container">
-          <select value={message.role} onChange={(e) => updateMessage({ ...message, role: e.target.value as any })}>
+          <select data-testid="role-select" value={message.role} onChange={(e) => updateMessage({ ...message, role: e.target.value as any })}>
             <option value="user">User</option>
             <option value="assistant">Assistant</option>
             <option value="system">System</option>
@@ -70,7 +70,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
             Content:
           </div>
           <div className="input-container">
-            <textarea rows={6} value={contentValue} onChange={(e) => setContentValue(e.target.value)} onBlur={() => updateMessage({ ...message, content: contentValue })} />
+            <textarea data-testid="content-input" rows={6} value={contentValue} onChange={(e) => setContentValue(e.target.value)} onBlur={() => updateMessage({ ...message, content: contentValue })} />
           </div>
         </div>
       )}
@@ -80,7 +80,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
             Function Call Name:
           </div>
           <div className="input-container">
-            <input type="text" value={functionCallName} onChange={(e) => setFunctionCallName(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, name: functionCallName } })} />
+            <input data-testid="function-call-name-input" type="text" value={functionCallName} onChange={(e) => setFunctionCallName(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, name: functionCallName } })} />
           </div>
         </div>
       )}
@@ -90,7 +90,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
             Function Call Arguments:
           </div>
           <div className="input-container">
-            <textarea rows={6} value={functionCallArgString} onChange={handleFunctionCallArgStringChange} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, arguments: JSON.parse(functionCallArgString) } })} />
+            <textarea data-testid="function-call-arguments-input" rows={6} value={functionCallArgString} onChange={handleFunctionCallArgStringChange} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, arguments: JSON.parse(functionCallArgString) } })} />
           </div>
         </div>
       )}
@@ -100,7 +100,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
             Name:
           </div>
           <div className="input-container">
-            <input type="text" value={nameValue} onChange={(e) => setNameValue(e.target.value)} onBlur={() => updateMessage({ ...message, name: nameValue })} />
+            <input data-testid="name-input" type="text" value={nameValue} onChange={(e) => setNameValue(e.target.value)} onBlur={() => updateMessage({ ...message, name: nameValue })} />
           </div>
         </div>
       )}
