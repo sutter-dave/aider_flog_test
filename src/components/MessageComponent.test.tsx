@@ -13,7 +13,7 @@ test('renders message component', () => {
 
   const updateMessage = jest.fn();
 
-  const { getByLabelText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+  const { getByLabelText, getByText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
 
   const roleElement = getByLabelText(/Role:/i);
   expect(roleElement).toBeInTheDocument();
@@ -29,6 +29,12 @@ test('renders message component', () => {
 
   const nameElement = getByLabelText(/^Name:$/i);
   expect(nameElement).toBeInTheDocument();
+
+  const includeNameFieldButton = getByText(/Include Name Field/i);
+  expect(includeNameFieldButton).toBeInTheDocument();
+
+  const functionCallInputButton = getByText(/Function Call Input/i);
+  expect(functionCallInputButton).toBeInTheDocument();
 });
 
 test('updates message role', () => {
@@ -108,4 +114,50 @@ test('updates message name', () => {
   fireEvent.blur(nameElement);
 
   expect(updateMessage).toHaveBeenCalledWith({ ...message, name: 'Jane Doe' });
+});
+
+test('shows and hides name field', () => {
+  const message: ChatMessage = {
+    id: '1',
+    role: 'user',
+    content: 'Hello, world!',
+  };
+
+  const updateMessage = jest.fn();
+
+  const { getByText, getByLabelText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+
+  const includeNameFieldButton = getByText(/Include Name Field/i);
+  fireEvent.click(includeNameFieldButton);
+
+  const nameElement = getByLabelText(/^Name:$/i);
+  expect(nameElement).toBeInTheDocument();
+
+  const omitNameFieldButton = getByText(/Omit Name Field/i);
+  fireEvent.click(omitNameFieldButton);
+
+  expect(nameElement).not.toBeInTheDocument();
+});
+
+test('switches between content and function call', () => {
+  const message: ChatMessage = {
+    id: '1',
+    role: 'user',
+    content: 'Hello, world!',
+  };
+
+  const updateMessage = jest.fn();
+
+  const { getByText, getByLabelText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+
+  const functionCallInputButton = getByText(/Function Call Input/i);
+  fireEvent.click(functionCallInputButton);
+
+  const functionCallNameElement = getByLabelText(/Function Call Name:/i);
+  expect(functionCallNameElement).toBeInTheDocument();
+
+  const normalMessageInputButton = getByText(/Normal Message Input/i);
+  fireEvent.click(normalMessageInputButton);
+
+  expect(functionCallNameElement).not.toBeInTheDocument();
 });
