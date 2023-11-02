@@ -20,3 +20,11 @@
   flex: 1;
   margin-left: 10px;
 }
+
+textarea {
+  width: 100%; /* Set width to cover available space */
+}
+
+input[type="text"] {
+  width: 100%; /* Set width to cover available space */
+}
