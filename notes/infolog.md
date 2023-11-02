@@ -1,5 +1,25 @@
 # Infolog
 
+## 11/2/23
+
+DOH! I can't use this!
+
+Changes I would like to make:
+
+- Ok changes before they are written
+- Easily revert changes - maybe make the commit after I accept them.
+    - This should involve testing. I can run it and see if it looks ok. Doing the tests would be good too, but
+    below I didn't necessarily have the tests updated.
+- It kept trying to update the design documents. In addition to OKing changes, I should have some files "read only"
+that it can actually view.
+
+other things that would be nice:
+
+- It would be nice if it were easier to change the viewable files
+- It would be nice if ti could populate the files it needed itself.
+- It would be nice if it would update the tests with the code and then test.
+
+
 ## 10/20/23
 
 progress:
