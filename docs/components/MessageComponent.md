@@ -15,6 +15,9 @@ To display and allow editing of a single chat message.
 - `functionCallName`: A string representing the current value of the function call name. This state retains its value even when the function call field is not displayed.
 - `functionCallArgString`: A string representing the current value of the function call argument string. This state retains its value even when the function call field is not displayed.
 - `nameValue`: A string representing the current value of the name. This state retains its value even when the name field is not displayed.
+- `displayContent`: A boolean indicating whether the content field is displayed.
+- `displayFunctionCall`: A boolean indicating whether the function call field is displayed.
+- `displayName`: A boolean indicating whether the name field is displayed.
 
 ## User Interactions
 
