@@ -13,8 +13,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
   const [functionCallArgString, setFunctionCallArgString] = useState(JSON.stringify(message.function_call?.arguments) || '');
   const [nameValue, setNameValue] = useState(message.name || '');
   const [showContent, setShowContent] = useState(true);
-  const [showName, setShowName] = useState(false); // Updated default value
-  const [showFunctionCall, setShowFunctionCall] = useState(true);
+  const [showName, setShowName] = useState(false);
 
   const toggleContent = () => {
     setShowContent(!showContent);
@@ -22,14 +21,13 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
       // Switching to content, update the message state with the content value
       updateMessage({ ...message, content: contentValue });
     } else {
-      // Switching to function call, update the message state with the function call name
-      updateMessage({ ...message, function_call: { ...message.function_call, name: functionCallName } });
+      // Switching to function call, update the message state with the function call name and arguments
+      updateMessage({ ...message, function_call: { name: functionCallName, arguments: JSON.parse(functionCallArgString) } });
     }
   };
 
   const toggleName = () => {
     setShowName(!showName);
-    setShowFunctionCall(!showName);
     if (!showName) {
       // Showing the name field, update the message state with the name value
       updateMessage({ ...message, name: nameValue });
@@ -74,7 +72,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
           </div>
         </div>
       )}
-      {!showContent && showFunctionCall && (
+      {!showContent && (
         <div className="form-group">
           <div className="label-right">
             Function Call Arguments:
@@ -97,8 +95,8 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
       <div className="form-group">
         <div className="label-right"></div> {/* Empty label */}
         <div className="input-container">
-          <button onClick={toggleContent}>{showContent ? 'Function Call Input' : 'Normal Message Input'}</button>
-          <button onClick={toggleName}>{showName ? 'Omit Name Field' : 'Include Name Field'}</button>
+          <button className="link-button" onClick={toggleContent}>{showContent ? 'Function Call Input' : 'Normal Message Input'}</button>
+          <button className="link-button" onClick={toggleName}>{showName ? 'Omit Name Field' : 'Include Name Field'}</button>
         </div>
       </div>
     </div>
