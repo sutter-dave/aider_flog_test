@@ -12,6 +12,16 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
   const [functionCallName, setFunctionCallName] = useState(message.function_call?.name || '');
   const [functionCallArgString, setFunctionCallArgString] = useState(JSON.stringify(message.function_call?.arguments) || '');
   const [nameValue, setNameValue] = useState(message.name || '');
+  const [showContent, setShowContent] = useState(true);
+  const [showName, setShowName] = useState(true);
+
+  const toggleContent = () => {
+    setShowContent(!showContent);
+  };
+
+  const toggleName = () => {
+    setShowName(!showName);
+  };
 
   return (
     <div className="message-component">
@@ -28,22 +38,26 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
           </select>
         </div>
       </div>
-      <div className="form-group">
-        <div className="label-right">
-          Content:
+      {showContent && (
+        <div className="form-group">
+          <div className="label-right">
+            Content:
+          </div>
+          <div className="input-container">
+            <textarea value={contentValue} onChange={(e) => setContentValue(e.target.value)} onBlur={() => updateMessage({ ...message, content: contentValue })} />
+          </div>
         </div>
-        <div className="input-container">
-          <textarea value={contentValue} onChange={(e) => setContentValue(e.target.value)} onBlur={() => updateMessage({ ...message, content: contentValue })} />
+      )}
+      {!showContent && (
+        <div className="form-group">
+          <div className="label-right">
+            Function Call Name:
+          </div>
+          <div className="input-container">
+            <input type="text" value={functionCallName} onChange={(e) => setFunctionCallName(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, name: functionCallName } })} />
+          </div>
         </div>
-      </div>
-      <div className="form-group">
-        <div className="label-right">
-          Function Call Name:
-        </div>
-        <div className="input-container">
-          <input type="text" value={functionCallName} onChange={(e) => setFunctionCallName(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, name: functionCallName } })} />
-        </div>
-      </div>
+      )}
       <div className="form-group">
         <div className="label-right">
           Function Call Arguments:
@@ -52,12 +66,23 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
           <textarea value={functionCallArgString} onChange={(e) => setFunctionCallArgString(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, arguments: JSON.parse(functionCallArgString) } })} />
         </div>
       </div>
+      {showName && (
+        <div className="form-group">
+          <div className="label-right">
+            Name:
+          </div>
+          <div className="input-container">
+            <input type="text" value={nameValue} onChange={(e) => setNameValue(e.target.value)} onBlur={() => updateMessage({ ...message, name: nameValue })} />
+          </div>
+        </div>
+      )}
       <div className="form-group">
         <div className="label-right">
-          Name:
+          Show/Hide:
         </div>
         <div className="input-container">
-          <input type="text" value={nameValue} onChange={(e) => setNameValue(e.target.value)} onBlur={() => updateMessage({ ...message, name: nameValue })} />
+          <button onClick={toggleContent}>{showContent ? 'Function Call Input' : 'Normal Message Input'}</button>
+          <button onClick={toggleName}>{showName ? 'Omit Name Field' : 'Include Name Field'}</button>
         </div>
       </div>
     </div>
