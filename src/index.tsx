@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import MessageComponent from './components/MessageComponent';
 import { ChatMessage } from './types/chatTypes';
 
