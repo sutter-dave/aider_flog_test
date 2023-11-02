@@ -29,7 +29,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
       <div className="form-group">
         <label>
           Content:
-          <input type="text" value={contentValue} onChange={(e) => setContentValue(e.target.value)} onBlur={() => updateMessage({ ...message, content: contentValue })} />
+          <textarea value={contentValue} onChange={(e) => setContentValue(e.target.value)} onBlur={() => updateMessage({ ...message, content: contentValue })} />
         </label>
       </div>
       <div className="form-group">
@@ -41,7 +41,7 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
       <div className="form-group">
         <label>
           Function Call Arguments:
-          <input type="text" value={functionCallArgString} onChange={(e) => setFunctionCallArgString(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, arguments: JSON.parse(functionCallArgString) } })} />
+          <textarea value={functionCallArgString} onChange={(e) => setFunctionCallArgString(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, arguments: JSON.parse(functionCallArgString) } })} />
         </label>
       </div>
       <div className="form-group">
