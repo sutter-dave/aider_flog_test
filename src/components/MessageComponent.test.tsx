@@ -84,7 +84,10 @@ test('updates message function call', () => {
 
   const updateMessage = jest.fn();
 
-  const { getByTestId } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+  const { getByTestId, getByText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+
+  // Set showContent state to false
+  fireEvent.click(getByText(/Function Call Input/i));
 
   const functionCallNameElement = getByTestId('function-call-name-input') as HTMLInputElement;
   fireEvent.change(functionCallNameElement, { target: { value: 'say' } });
@@ -107,7 +110,10 @@ test('updates message name', () => {
 
   const updateMessage = jest.fn();
 
-  const { getByTestId } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+  const { getByTestId, getByText } = render(<MessageComponent message={message} updateMessage={updateMessage} />);
+
+  // Set showName state to true
+  fireEvent.click(getByText(/Include Name Field/i));
 
   const nameElement = getByTestId('name-input') as HTMLInputElement;
   fireEvent.change(nameElement, { target: { value: 'Jane Doe' } });
