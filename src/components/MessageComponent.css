@@ -16,9 +16,7 @@
   padding-top: 5px; /* Added to align label at the top right */
 }
 
-textarea,
-input[type="text"],
-select {
+.input-container {
   flex: 1;
   margin-left: 10px;
 }

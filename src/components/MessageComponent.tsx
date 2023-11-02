@@ -16,39 +16,49 @@ const MessageComponent: React.FC<MessageComponentProps> = ({ message, updateMess
   return (
     <div className="message-component">
       <div className="form-group">
-        <label className="label-right">
+        <div className="label-right">
           Role:
+        </div>
+        <div className="input-container">
           <select value={message.role} onChange={(e) => updateMessage({ ...message, role: e.target.value as any })}>
             <option value="user">User</option>
             <option value="assistant">Assistant</option>
             <option value="system">System</option>
             <option value="function">Function</option>
           </select>
-        </label>
+        </div>
       </div>
       <div className="form-group">
-        <label className="label-right">
+        <div className="label-right">
           Content:
+        </div>
+        <div className="input-container">
           <textarea value={contentValue} onChange={(e) => setContentValue(e.target.value)} onBlur={() => updateMessage({ ...message, content: contentValue })} />
-        </label>
+        </div>
       </div>
       <div className="form-group">
-        <label className="label-right">
+        <div className="label-right">
           Function Call Name:
+        </div>
+        <div className="input-container">
           <input type="text" value={functionCallName} onChange={(e) => setFunctionCallName(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, name: functionCallName } })} />
-        </label>
+        </div>
       </div>
       <div className="form-group">
-        <label className="label-right">
+        <div className="label-right">
           Function Call Arguments:
+        </div>
+        <div className="input-container">
           <textarea value={functionCallArgString} onChange={(e) => setFunctionCallArgString(e.target.value)} onBlur={() => updateMessage({ ...message, function_call: { ...message.function_call, arguments: JSON.parse(functionCallArgString) } })} />
-        </label>
+        </div>
       </div>
       <div className="form-group">
-        <label className="label-right">
+        <div className="label-right">
           Name:
+        </div>
+        <div className="input-container">
           <input type="text" value={nameValue} onChange={(e) => setNameValue(e.target.value)} onBlur={() => updateMessage({ ...message, name: nameValue })} />
-        </label>
+        </div>
       </div>
     </div>
   );
