@@ -2,6 +2,10 @@
 
 ## 10/20/23
 
+progress:
+
+- added the Message Component and tests
+
 notes:
 
 1. I think this works well because of the minimal instructions. The "overhead" seems to be:
