@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, queryByTestId } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import MessageComponent from './MessageComponent';
 import { ChatMessage } from '../types/chatTypes';
@@ -21,14 +21,14 @@ test('renders message component', () => {
   const contentElement = getByTestId('content-input');
   expect(contentElement).toBeInTheDocument();
 
-  const functionCallNameElement = getByTestId('function-call-name-input');
-  expect(functionCallNameElement).not.toBeInTheDocument();
+  const functionCallNameElement = queryByTestId(document.body, 'function-call-name-input');
+  expect(functionCallNameElement).toBeNull();
 
-  const functionCallArgStringElement = getByTestId('function-call-arguments-input');
-  expect(functionCallArgStringElement).not.toBeInTheDocument();
+  const functionCallArgStringElement = queryByTestId(document.body, 'function-call-arguments-input');
+  expect(functionCallArgStringElement).toBeNull();
 
-  const nameElement = getByTestId('name-input');
-  expect(nameElement).not.toBeInTheDocument();
+  const nameElement = queryByTestId(document.body, 'name-input');
+  expect(nameElement).toBeNull();
 
   const includeNameFieldButton = getByText(/Include Name Field/i);
   expect(includeNameFieldButton).toBeInTheDocument();
