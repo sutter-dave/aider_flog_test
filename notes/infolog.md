@@ -20,6 +20,13 @@ other things that would be nice:
 - It would be nice if it would update the tests with the code and then test.
 
 
+ANOTHER ISSUE:
+
+I want to refactor, separating the MessageComponent into smaller pieces. As is, the design docs might be too big. Maybe
+I need a pseudocode version that is lighter? I guess I need inputs, outputs and functions. Maybe the design doc is OK? But
+I need to think more about this. It seems hard to "refactor" the design doc.
+
+
 ## 10/20/23
 
 progress:

@@ -1,20 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import MessageComponent from './components/MessageComponent';
-import { ChatMessage } from './types/chatTypes';
+import ChatHistory from './components/ChatHistory';
 
 const App: React.FC = () => {
-  const [message, setMessage] = useState<ChatMessage>({
-    id: '1',
-    role: 'user',
-    content: 'Hello, world!',
-  });
-
-  const updateMessage = (updatedMessage: ChatMessage) => {
-    setMessage(updatedMessage);
-  };
-
-  return <MessageComponent message={message} updateMessage={updateMessage} />;
+  return <ChatHistory />;
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);

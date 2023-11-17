@@ -16,6 +16,12 @@ export type ChatSettings = {
   maxLength?: number;
 };
 
+export const defaultChatSettings: ChatSettings = {
+  apiKey: 'dummy-api-key',
+  model: 'gpt-3.5-turbo',
+  temperature: 0,
+};
+
 export type ChatFunction = {
   name: string;
   description?: string;
